@@ -1,0 +1,45 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# Para ativar o venv: .\ambiente-aulas\Scripts\Activate.ps1
+# Para desativar o ambiente virtual basta utilizar o comando 'deactivate'
+
+# Para criar o projeto usando o framework Django: django-admin startproject nomeDoProjeto
+# manage.py - Permite gerenciar o projeto de forma customizada através de linha de comando. Ele tem as mesmas características que o django-admin, porém observa as configurações específicas do projeto (settings.py);
+# __init__.py - Indica ao Python que o diretório deve ser tratado como um pacote;
+# settings.py - Contém as configurações para o projeto;
+# urls.py - A lista com as regras para URLs do seu projeto;
+# asgi.py e wsgi.py - Pontos de entrada para utilizar serviços ASGI e WSGI.
+
+# Para poder acessar o site recém criado é necessário executar o servidor Django: python manage.py runserver
+
+# Ambiente virtual
+venv/
+.env
+*.env
+pyvenv.cfg
+Scripts
+
+# Ignorar a pasta de pacotes do ambiente virtual
+lib/site-packages/
+
+# Arquivos do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Banco de dados SQLite
+*.sqlite3
+
+# Configurações do VS Code
+.vscode/
+
+# Arquivos de log
+*.log
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de migração
+*/migrations/
+*/migrations/*.py
+!*/migrations/__init__.py
