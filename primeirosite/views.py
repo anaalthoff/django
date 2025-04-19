@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 import datetime
+from django.template import loader
 import locale
 
 def index(request):
@@ -7,8 +8,9 @@ def index(request):
 
 def qual_dia(request):
     dia_formatado = datetime.datetime.now().strftime('%d/%m/%Y')
-    html = "<html><body>Hoje é dia %s.</body></html>" % dia_formatado
-    return HttpResponse(html)
+    template = loader.get_template("qual_dia.html")
+    context = {'hoje' : dia_formatado}
+    return HttpResponse(template.render(context, request))
 
 def qual_dia_sera(request, dias):
     novo_dia = datetime.datetime.now() + datetime.timedelta(days = dias)
