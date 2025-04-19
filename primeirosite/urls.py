@@ -21,5 +21,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name="index"),
-    path("dia/", views.qual_dia)
+    path("dia/", views.qual_dia),
+    path("dia/mais/<int:dias>", views.qual_dia_sera),
+    path("dia/semana", views.dia_da_semana),
+    path("dia/anos/<int:anos>", views.dia_anos_passados)
 ]
