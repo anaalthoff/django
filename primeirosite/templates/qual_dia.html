@@ -3,3 +3,20 @@
         Olá, {{ nome }}! Hoje é dia {{ hoje }}.
     </body> 
 </html>
+
+<!-- O Django nos permite utilizar o valor das variáveis de forma diferentes do seu “valor bruto” através dos filters. A sintaxe é a seguinte:
+
+{{ variavel|filter }}
+
+
+Alguns dos filters mais utilizados:
+
+date: formata uma data, por exemplo {{ data_nascimento|date:“d/m/Y” }} vai formatar a data no formato “dd/mm/aaaa”.
+
+length: retorna o tamanho de uma lista ou de uma string, por exemplo {{ nome|length }} vai retornar quantos caracteres estão armazenados na variável nome.
+
+lower / upper: vai deixar todos os caracteres de uma string em caixa baixa (lower) ou em caixa alta (upper) - {{ nome|upper }}
+
+default: mostra um valor pré definido caso uma variável esteja vazia, por exemplo {{ usuario_logado|default:“Visitante” }}
+
+add: adiciona um valor à uma variável, por exemplo {{ quantidade|add:“1” }}, vai adicionar 1 ao valor armazenado na variável quantidade. Inicialmente ele tentará adicionar como valor inteiro, se não foi possivel vai concatenar as strings ou listas. -->
