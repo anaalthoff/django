@@ -1,16 +1,26 @@
 from django.http import HttpResponse
 import datetime
-from django.template import loader
 import locale
 
 def index(request):
     return HttpResponse('Olá, mundo!')
 
+# from django.template import loader
+
+# def qual_dia(request):
+#     dia_formatado = datetime.datetime.now().strftime('%d/%m/%Y')
+#     template = loader.get_template("qual_dia.html")
+#     context = {'hoje' : dia_formatado}
+#     return HttpResponse(template.render(context, request))
+
+# Outra forma de escrever a função qual_dia podendo retornar diretamente o objeto renderizado
+from django.shortcuts import render
+
 def qual_dia(request):
     dia_formatado = datetime.datetime.now().strftime('%d/%m/%Y')
-    template = loader.get_template("qual_dia.html")
-    context = {'hoje' : dia_formatado}
-    return HttpResponse(template.render(context, request))
+    context = {'nome' : 'Ana', 'hoje' : dia_formatado}
+    return render(request, "qual_dia.html", context)
+
 
 def qual_dia_sera(request, dias):
     novo_dia = datetime.datetime.now() + datetime.timedelta(days = dias)
