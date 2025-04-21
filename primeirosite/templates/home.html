@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Página Inicial{% endblock %}
+
+    {% block content %}
+    <h2>Bem-vindo, {{ nome }}!</h2>
+    <p>Estamos felizes em te ver por aqui!</p>
+    {% endblock %}
+</body>
+
+</html>
+
+<!-- Neste exemplo temos a tag extends. Ela é utilizada para indicar qual é o template pai. Nesse exemplo é o arquivo base.html que está no mesmo diretório do arquivo que herda ele.
+
+Devido ao fato de estar herdando um arquivo HTML completo, não precisa criar todas as tags HTML novamente, apenas com os blocos que se quer utilizar.
+
+Neste caso, está sendo passando valores para dois blocos, o bloco tittle e o bloco content. O conteúdo que será passado está entre as tags {% block %} e {% endblock %}, com referência ao nome do bloco no template pai.
+
+O bloco message não está sendo utilizado, neste caso o valor que permanecerá é o valor definido no template pai.
+
+Um ponto importante é que a tag extends deve ser primeira tag utilizada no template. -->
